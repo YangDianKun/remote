@@ -46,7 +46,7 @@
 /* 设备信息 */
 #define DEVICE_MODLE               " DM : TX EQU"
 #define FIRMWARE_VERSION           " FW : 1.0.0"
-#define DEVICE_NUMBER              " DN : 01112020"
+//#define DEVICE_NUMBER              " DN : 01112020"
 //#define RF_NUMBER                " RF : D1D11A0844"
 #define LEFT_DEV_ID                ((uint8_t)0xff)
 #define RIGHT_DEV_ID               ((uint8_t)0)

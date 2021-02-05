@@ -406,14 +406,14 @@ static void DeviceInfoCallBack(void)
 	lcd_clear();
 	lcd_str_5x8(0, 0, 0, 0, (uint8_t *)DEVICE_MODLE);
 	lcd_str_5x8(2, 0, 0, 0, (uint8_t *)FIRMWARE_VERSION);
-	lcd_str_5x8(4, 0, 0, 0, (uint8_t *)DEVICE_NUMBER);
+	//lcd_str_5x8(4, 0, 0, 0, (uint8_t *)DEVICE_NUMBER);
 	
 	pwl = &gwlCurrentParam.addr_h;
 	for(i = 0; i < sizeof(gwlCurrentParam) - 1; i++)
 	{
 		sprintf((char *)(&rf_str[i * 2]), "%X", *pwl++);
 	}
-	lcd_str_5x8(6, 6, 0, 0, "RF :");
+	lcd_str_5x8(6, 6, 0, 0, "DN :");
 	lcd_str_5x8(6, 34, 0, 0, rf_str);
 	
 	while(1)

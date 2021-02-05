@@ -53,9 +53,6 @@ int main (void)
 	/* // 进入菜单设置 */
 	EnterMenu();
 	
-	/* // 设备解锁 */
-	board_unlock();
-	
 	/* // 人机界面交互初始化 */
 	interact_init();
 	
@@ -66,6 +63,9 @@ int main (void)
 	sysMode = USER_DATA->systemMode;
 	sysStatus = SYS_ACTION_STATUS;
 	sysIdleCnt = 0;
+	
+	/* // 设备解锁 */
+	board_unlock();
 	
 	/* // 开启全局中断 */
 	ENABLE_INT();

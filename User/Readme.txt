@@ -25,3 +25,6 @@
 
 2020-12-08
 1. 计划：普通模式加入stop模式，RTC 1s 唤醒一次并显示时间
+
+2021-2-5
+修改 menu 文件 DeviceInfoCallBack 函数，DN显示为RF配置数据
