@@ -57,7 +57,8 @@ int8_t systemParamInit(void)
 		wlParam.addr_h = 0x12;          // 高地址位
 		wlParam.addr_l = 0x34;          // 低地址位
 		wlParam.channal = WL_CHANNEl;   // 信道
-		wlParam.speed = 0x1A;           // 串口波特率 ，空速
+		//wlParam.speed = 0x1A;           // 串口波特率 ，空速 9600 2.4k
+		wlParam.speed = 0x2A;           // 串口波特率 ，空速 38400 2.4k
 		wlParam.option = 0x7E;          // 透明传输，开启FEC，功耗配置
 		wlParam.cmd = WL_SET_CMD_SAVE;
 		if (wl_set_param(&wlParam) < 0)

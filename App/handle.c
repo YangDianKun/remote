@@ -129,7 +129,7 @@ int8_t keys_option_handle(void)
 //					cmdBlink = ~cmdBlink;
 //					lcd_str_gb2312(6, 8, cmdBlink, LCD_UP_FRAM, OptRelatTable[i].cmdStr); // 命令显示
 //				}
-				delay_ms(100);
+				delay_ms(50);
 			}
 			LED1_OFF();
 			lcd_str_gb2312(6, 8, 0, LCD_UP_FRAM, "    ");	 // 清空功能码显示	

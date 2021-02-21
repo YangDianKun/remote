@@ -48,9 +48,6 @@ int board_init(void)
 //	POW_5V_ON();
 //	delay_ms(10);
 	
-	/* 串口初始化 */
-	usart2_init(9600);
-	
 	/* led初始化 */
 	led_init();
 	

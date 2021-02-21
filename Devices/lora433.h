@@ -95,7 +95,7 @@ extern WLConfigData_t gwlCurrentParam;
 /* º¯ÊıÉùÃ÷ */
 uint8_t wl_state_get(void);
 int8_t wl_busy_check (uint32_t timOut);
-int8_t wl_get_param (uint8_t cmd, void * param, uint8_t size);
+//int8_t wl_get_param (uint8_t cmd, void * param, uint8_t size);
 int8_t wl_set_param (WLConfigData_t * param);
 
 int8_t wl_mode_init (void);

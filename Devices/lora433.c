@@ -38,6 +38,7 @@
 
 
 WLConfigData_t gwlCurrentParam;
+static int8_t wl_get_param (uint8_t cmd, void * param, uint8_t size);
 
 /**********************************************************************************************************
 ** Function name        :   bsp_HardUsart2SendByte
@@ -126,7 +127,8 @@ int8_t wl_mode_init (void)
 {
 	int8_t ret = 0;
 	//WLConfigData_t wlConfigData;
-	     
+	 
+	usart2_init(9600);               // 串口配置
 	wl_gpio_init();                  // 配置硬件 
 	wl_mode_config(SLEEP_MODE);      // 模块配置为休眠模式 
 	delay_ms(10);
@@ -142,13 +144,14 @@ int8_t wl_mode_init (void)
 	delay_ms(10);
 	wl_busy_check(BD_300MS_TIMEOUT);      // 模块忙检测 
 	wl_mode_config(NORMANL_MODE);         // 模块配置为正常模式 
+	usart2_init(38400);                   // 串口配置
 	
 	return ret;
 }
 
 /**********************************************************************************************************
 ** Function name        :   wl_set_param
-** Descriptions         :   
+** Descriptions         :   设置无线模块参数，并更新全局无线模块参数变量
 ** parameters           :   无
 ** Returned value       :   无
 ***********************************************************************************************************/
@@ -157,6 +160,7 @@ int8_t wl_set_param (WLConfigData_t * param)
 	//WLConfigData_t wlParamCheck;
 	if(param == NULL)	return -1;
 	
+	usart2_init(9600);               // 串口配置
 	wl_mode_config(SLEEP_MODE);      // 模块配置为休眠模式 
 	delay_ms(10);
 	wl_busy_check(BD_300MS_TIMEOUT); // 模块忙检测 
@@ -175,6 +179,7 @@ int8_t wl_set_param (WLConfigData_t * param)
 	delay_ms(10);
 	wl_busy_check(BD_300MS_TIMEOUT);
 	wl_mode_config(NORMANL_MODE);         /* 模块配置为正常模式 */
+	usart2_init(38400);                    // 串口配置
 	
 	return 0;
 }
@@ -185,7 +190,7 @@ int8_t wl_set_param (WLConfigData_t * param)
 ** parameters           :   无
 ** Returned value       :   无
 ***********************************************************************************************************/
-int8_t wl_get_param (uint8_t cmd, void * param, uint8_t size)
+static int8_t wl_get_param (uint8_t cmd, void * param, uint8_t size)
 {
 	int8_t ret = 0;
 	uint8_t repeat = 0;

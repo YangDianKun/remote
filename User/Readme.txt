@@ -28,3 +28,9 @@
 
 2021-2-5
 修改 menu 文件 DeviceInfoCallBack 函数，DN显示为RF配置数据
+
+2021-2-21
+修改 lora 文件 wl_get_param() 为内部函数；
+修改paramter 文件 systemParamInit() 函数 wlParam.speed = 0x2A;  // 串口波特率 ，空速 38400 2.4k
+
+keys_option_handle()命令发送周期修改为 50ms
